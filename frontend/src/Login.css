@@ -1,0 +1,219 @@
+/* Pagină login generală */
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
+    background: linear-gradient(-45deg, #a5cbf8, #d8e1ed, #54abe3, #dadfe8);
+    background-size: 400% 400%;
+    animation: gradientFlow 15s ease infinite;
+}
+
+@keyframes gradientFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+.login-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    background: transparent;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Logo în afara containerului, centrat, cu animație */
+.logo-login {
+    height: 60px;
+    width: auto;
+    margin-bottom: 20px;
+    animation: fadeInBounce 3s ease forwards;
+    opacity: 0;
+    transform: translateY(-30px);
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: translateY(0) scale(1.05);
+}
+
+/* Selector de limbă în colț sus dreapta */
+.language-switch {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #333;
+    animation: fadeInBounce 2s ease forwards;
+
+}
+
+.language-switch span {
+    cursor: pointer;
+    padding: 5px;
+    transition: color 0.3s;
+}
+
+.language-switch span:hover {
+    color: #0078d4;
+}
+
+/* Container login */
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 0 25px rgba(0, 123, 255, 0.2);
+    text-align: center;
+    animation: fadeIn 2s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+    box-sizing: border-box;
+}
+
+.login-container:hover {
+    box-shadow: 0 0 25px rgba(0, 123, 255, 0.3);
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #2a2a2a;
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: border 0.3s, box-shadow 0.3s;
+
+}
+
+input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
+    transform: scale(1.02);
+}
+
+.input-valid {
+    border: 2px solid #28a745;
+    box-shadow: 0 0 8px rgba(40, 167, 69, 0.3);
+}
+
+.input-invalid {
+    border: 2px solid #dc3545;
+    box-shadow: 0 0 8px rgba(220, 53, 69, 0.3);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #ffffff;
+    color: #0078d4;
+    border: 2px solid #0078d4;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 120, 212, 0.1);
+}
+
+button:hover {
+    background-color: #0078d4;
+    color: #ffffff;
+    transform: scale(1.03);
+}
+
+.mesaj {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.mesaj-succes {
+    color: #28a745;
+}
+
+.mesaj-eroare {
+    color: #dc3545;
+}
+
+/* Fade-in general */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Bounce pentru logo */
+@keyframes fadeInBounce {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px) scale(0.9);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(10px) scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .logo {
+        height: 45px;
+    }
+
+    .language-switch {
+        top: 10px;
+        right: 10px;
+        font-size: 0.85rem;
+    }
+
+    .login-container {
+        padding: 1.5rem;
+    }
+
+    input,
+    button {
+        padding: 10px;
+    }
+
+    label {
+        font-size: 0.9rem;
+    }
+}
