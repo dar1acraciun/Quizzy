@@ -1,9 +1,7 @@
 package com.backend.utils;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -11,25 +9,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
-enum FlashType {
-    SINGLE, MULTIPLE
-}
-
-@ToString
-@Getter
-@Setter
-@NoArgsConstructor
-class FC {
-    private String question;
-    private int level; // 0 - easy, 1 - medium, 2 - hard
-    private FlashType type;
-    private List<String> rightAnswers;
-    private List<String> wrongAnswers;
-}
-
 @Setter
 @Getter
-class FlashCardParser {
+public class FlashCardParser {
 
     private final String content;
     private final List<FC> list = new ArrayList<>();
