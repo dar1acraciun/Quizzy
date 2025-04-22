@@ -23,3 +23,5 @@ public interface CourseRepository extends JpaRepository<Course, Integer> {
 //    @Query(value = "INSERT INTO enrollment (user_id, course_id, enrollment_date, grade) VALUES (:userId, :courseId, CURRENT_DATE, NULL)", nativeQuery = true)
 //    void setCourse(@Param("userId") Long userId, @Param("courseId") Long courseId);
 }
+
+
